@@ -1,0 +1,12 @@
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/flutter_playground
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/tiec/dev/random/flutter_playground/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES

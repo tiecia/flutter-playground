@@ -32,7 +32,7 @@
           pkgs.mkShell {
             ANDROID_SDK_ROOT = "${android-sdk}/libexec/android-sdk";
             ANDROID_HOME = "${android-sdk}/libexec/android-sdk";
-            CHROME_EXECUTABLE = "${chrome-pkg}/bin/${chrome-variant}";
+            CHROME_EXECUTABLE = "${chrome-pkg}/bin/${chrome-variant} --use-gl=desktop";
             buildInputs = [
               pkgs.flutter
               android-sdk
