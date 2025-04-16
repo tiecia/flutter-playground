@@ -23,16 +23,21 @@
           platform-tools
           platforms-android-35
           platforms-android-34
+          system-images-android-35-google-apis-x86-64
         ]);
         chrome-variant = "chromium";
         chrome-pkg = pkgs.${chrome-variant};
+        chrome-script = pkgs.writeShellScript "chrome-script" ''
+          exec ${chrome-pkg}/bin/${chrome-variant} --use-gl=desktop "$@"
+        '';
       in
       {
         devShell =
           pkgs.mkShell {
             ANDROID_SDK_ROOT = "${android-sdk}/libexec/android-sdk";
             ANDROID_HOME = "${android-sdk}/libexec/android-sdk";
-            CHROME_EXECUTABLE = "${chrome-pkg}/bin/${chrome-variant} --use-gl=desktop";
+            ANDROID_AVD_HOME = "/home/tiec/.config/.android/avd";
+            CHROME_EXECUTABLE = "${chrome-script}";
             buildInputs = [
               pkgs.flutter
               android-sdk
