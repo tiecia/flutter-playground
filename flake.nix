@@ -71,6 +71,7 @@
             pkgs.qemu_kvm
             pkgs.gradle
             jdk
+            pkgs.firebase-tools
           ];
           # emulator related: vulkan-loader and libGL shared libs are necessary for hardware decoding
           LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.vulkan-loader pkgs.libGL]}";
