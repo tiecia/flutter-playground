@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-playground-fireb-11278.firebasestorage.app',
     measurementId: 'G-2T6YVZEBC6',
   );
+
 }
