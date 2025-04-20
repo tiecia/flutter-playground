@@ -1,12 +1,43 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+var db = FirebaseFirestore.instance;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // var user = <String, dynamic>{
+  //   "Name": {"First": "John", "Last": "Doe"},
+  //   "Email": "johndoe@gmail.com",
+  // };
+  //
+  // var userRef = await db.collection("users").add(user);
+  // print("Added: ${userRef.id}");
+  //
+  // var announcement = <String, dynamic>{
+  //   "Subject": "A new announcement",
+  //   "Body":
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget semper odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam dapibus porta nulla, eu bibendum urna sodales eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam venenatis lobortis tellus ut efficitur. Morbi gravida, mauris non tempor pulvinar, elit quam pellentesque augue, in auctor elit leo in nisl. Maecenas condimentum est in aliquet interdum. Nulla erat leo, fringilla nec mollis quis, blandit sit amet velit. Aenean id varius mi, vel porttitor libero. ",
+  //   "CreatedBy": userRef,
+  // };
+  //
+  // db
+  //     .collection("announcements")
+  //     .add(announcement)
+  //     .then((DocumentReference doc) => print("Added: ${doc.id}"));
+  //
+  // db.collection("announcements").get().then((event) {
+  //   for (var doc in event.docs) {
+  //     var createdBy = doc.data()['CreatedBy'];
+  //     createdBy.get().then((userEvent) {
+  //       print("doc(${doc.id} => ${userEvent})");
+  //     });
+  //   }
+  // });
+
   runApp(const MyApp());
 }
 
