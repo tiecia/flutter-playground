@@ -25,6 +25,7 @@
           platforms-android-34
           system-images-android-35-google-apis-x86-64
           ndk-26-3-11579264
+          ndk-27-0-12077973
           cmake-3-22-1
         ]);
         chrome-variant = "chromium";
