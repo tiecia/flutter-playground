@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_course/services/models.dart';
 import 'package:flutter_firebase_course/shared/progress_bar.dart';
+import 'package:flutter_firebase_course/topics/drawer.dart';
+import 'package:flutter_firebase_course/topics/topic_screen.dart';
 import 'package:flutter_firebase_course/topics/topics.dart';
 
 class TopicItem extends StatelessWidget {
@@ -54,37 +56,6 @@ class TopicItem extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class TopicScreen extends StatelessWidget {
-  const TopicScreen({super.key, required this.topic});
-
-  final Topic topic;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-      ),
-      body: ListView(
-        children: [
-          Hero(
-            tag: topic.img,
-            child: Image.asset("assets/covers/${topic.img}"),
-          ),
-          Text(
-            topic.title,
-            style: const TextStyle(
-              height: 2,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
       ),
     );
   }

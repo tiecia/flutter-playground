@@ -30,30 +30,35 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      // Initialize FlutterFire:
-      future: _initialization,
-      builder: (context, snapshot) {
-        // Check for errors
-        if (snapshot.hasError) {
-          return Text('error');
-        }
+    return SafeArea(
+      child: FutureBuilder(
+        // Initialize FlutterFire:
+        future: _initialization,
+        builder: (context, snapshot) {
+          // Check for errors
+          if (snapshot.hasError) {
+            return Text(
+              'error: ${snapshot.error.toString()}',
+              textDirection: TextDirection.ltr,
+            );
+          }
 
-        // Once complete, show your application
-        if (snapshot.connectionState == ConnectionState.done) {
-          return StreamProvider(
-            create: (_) => FirestoreService().streamReport(),
-            initialData: Report(),
-            child: MaterialApp(
-              routes: appRoutes,
-              theme: appTheme,
-            ),
-          );
-        }
+          // Once complete, show your application
+          if (snapshot.connectionState == ConnectionState.done) {
+            return StreamProvider(
+              create: (_) => FirestoreService().streamReport(),
+              initialData: Report(),
+              child: MaterialApp(
+                routes: appRoutes,
+                theme: appTheme,
+              ),
+            );
+          }
 
-        // Otherwise, show something whilst waiting for initialization to complete
-        return Text('loading');
-      },
+          // Otherwise, show something whilst waiting for initialization to complete
+          return Text('loading', textDirection: TextDirection.ltr,);
+        },
+      ),
     );
   }
 }

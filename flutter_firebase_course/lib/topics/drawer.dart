@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_course/quiz/quiz.dart';
 import 'package:flutter_firebase_course/services/models.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -51,8 +52,16 @@ class QuizList extends StatelessWidget {
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           elevation: 4,
           margin: const EdgeInsets.all(4),
+          color: Theme.of(context).colorScheme.surfaceContainerHigh,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      QuizScreen(quizId: quiz.id),
+                ),
+              );
+            },
             child: Container(
               padding: const EdgeInsets.all(8),
               child: ListTile(

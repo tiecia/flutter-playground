@@ -30,6 +30,12 @@ class AnimatedProgressBar extends StatelessWidget {
               curve: Curves.easeOutCubic,
               height: height,
               width: box.maxWidth * _floor(value),
+              decoration: BoxDecoration(
+                color: _colorGen(value),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(height),
+                ),
+              ),
             )
           ],
         ),
