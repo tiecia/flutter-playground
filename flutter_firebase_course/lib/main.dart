@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
-// Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_firebase_course/routes.dart';
+import 'package:flutter_firebase_course/services/firestore.dart';
+import 'package:flutter_firebase_course/services/models.dart';
 import 'package:flutter_firebase_course/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  /// The future is part of the state of our widget. We should not call `initializeApp`
+  /// The future is part of the state of our widget. We should not call `initializeApp`main
   /// directly inside [build].
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
@@ -40,9 +41,13 @@ class _AppState extends State<App> {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          return MaterialApp(
-            routes: appRoutes,
-            theme: appTheme,
+          return StreamProvider(
+            create: (_) => FirestoreService().streamReport(),
+            initialData: Report(),
+            child: MaterialApp(
+              routes: appRoutes,
+              theme: appTheme,
+            ),
           );
         }
 
